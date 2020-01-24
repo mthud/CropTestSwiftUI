@@ -88,7 +88,6 @@ struct ContentView: View {
                             .resizable()
                             .scaleEffect(self.scale)
                             .aspectRatio(contentMode: .fill)
-                            .offset(y: self.currentPosition.height)
                             .offset(x: self.currentPosition.width, y: self.currentPosition.height)
                             .frame(width: self.frameSize.width, height: self.frameSize.height, alignment: .top)
                             .clipped()
