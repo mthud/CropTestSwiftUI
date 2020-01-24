@@ -122,8 +122,6 @@ struct ContentView: View {
     func prepareImage( ) {
         
         let imageToManipulate =  UIImage(named: "landscape")
-        let currentPositionWidth = self.currentPosition.width
-        let currentPositionHeight = self.currentPosition.height
         let zoomScale = self.scale
         let imsize = imageToManipulate!.size
 
@@ -131,6 +129,8 @@ struct ContentView: View {
         if imsize.height * scale < self.frameSize.height {
             scale = self.frameSize.height / imsize.height
         }
+        let currentPositionWidth = self.currentPosition.width / scale
+        let currentPositionHeight = self.currentPosition.height / scale
         let croppedImsize = CGSize(width: (self.frameSize.width/scale) / zoomScale, height: (self.frameSize.height/scale) / zoomScale)
         let xOffset = (( imsize.width - croppedImsize.width ) / 2.0) - (currentPositionWidth / zoomScale)
         let yOffset = (( imsize.height - croppedImsize.height) / 2.0) - (currentPositionHeight / zoomScale)
