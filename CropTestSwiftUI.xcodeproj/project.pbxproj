@@ -13,6 +13,7 @@
 		917B0A7523DB4B5F002EF687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917B0A7423DB4B5F002EF687 /* Assets.xcassets */; };
 		917B0A7823DB4B5F002EF687 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917B0A7723DB4B5F002EF687 /* Preview Assets.xcassets */; };
 		917B0A7B23DB4B5F002EF687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 917B0A7923DB4B5F002EF687 /* LaunchScreen.storyboard */; };
+		917B0A8323DB4C04002EF687 /* PhotoPositionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B0A8223DB4C04002EF687 /* PhotoPositionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		917B0A7723DB4B5F002EF687 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		917B0A7A23DB4B5F002EF687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		917B0A7C23DB4B60002EF687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917B0A8223DB4C04002EF687 /* PhotoPositionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPositionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				917B0A6E23DB4B5A002EF687 /* AppDelegate.swift */,
 				917B0A7023DB4B5A002EF687 /* SceneDelegate.swift */,
+				917B0A8223DB4C04002EF687 /* PhotoPositionData.swift */,
 				917B0A7223DB4B5A002EF687 /* ContentView.swift */,
 				917B0A7423DB4B5F002EF687 /* Assets.xcassets */,
 				917B0A7923DB4B5F002EF687 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				917B0A6F23DB4B5A002EF687 /* AppDelegate.swift in Sources */,
 				917B0A7123DB4B5A002EF687 /* SceneDelegate.swift in Sources */,
 				917B0A7323DB4B5A002EF687 /* ContentView.swift in Sources */,
+				917B0A8323DB4C04002EF687 /* PhotoPositionData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
