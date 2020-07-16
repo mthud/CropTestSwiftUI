@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  CropTestSwiftUI
-//
-//  Created by Doug on 2020-01-24.
-//  Copyright © 2020 dot3 Ltd. All rights reserved.
-//
 
 import SwiftUI
 
@@ -14,48 +7,18 @@ struct ContentView: View {
     @State var newPosition: CGSize = CGSize.zero
     @State var photoIsFinished: Bool = false
     @State var croppedImage: UIImage? = nil
-    @State var frameSize: CGSize = CGSize(width: 320, height: 570)
-    @State var frameIsSquare: Bool = false
+    @State var frameSize: CGSize = CGSize(width: 400, height: 400)
     
     var body: some View {
 
         VStack{
             HStack{
-                Button(action: {
-                    if self.frameIsSquare{
-                        self.frameSize = CGSize(width: 320, height: 570)
-                        self.frameIsSquare.toggle()
-                    }else{
-                        self.frameSize = CGSize(width: 400, height: 400)
-                        self.frameIsSquare.toggle()
-                    }
-                    
-                }, label: {
-                    if self.frameIsSquare {
-                        Image("story-size-icon")
-                        .resizable()
-                        .frame(width: 45.0, height: 45.0)
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.top, 10)
-                        .padding(.trailing, 20)
-                    }else{
-                        Image("square-size-icon")
-                        .resizable()
-                        .frame(width: 45.0, height: 45.0)
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.top, 10)
-                        .padding(.trailing, 20)
-                    }
-                }).buttonStyle(PlainButtonStyle())
-                 .padding(.top, 20)
-                .padding(.trailing, 20)
-                
+                                
                 Button(
                     action: {
                         self.photoIsFinished = false
                         self.croppedImage = nil
-                        self.frameSize = CGSize(width: 320, height: 570)
-                        self.frameIsSquare = false
+                        self.frameSize = CGSize(width: 400, height: 400)
                         self.currentPosition = CGSize.zero
                         self.newPosition = CGSize.zero
                         self.scale = 1.0
@@ -81,9 +44,10 @@ struct ContentView: View {
                 ZStack {
                     Rectangle()
                     .foregroundColor(.white)
-                    .frame(width:self.frameSize.width, height:self.frameSize.height, alignment: .top)
+                    .frame(width: self.frameSize.width, height: self.frameSize.height, alignment: .top)
                     .shadow(color: .gray, radius: 2, x: 2, y: 2)
-                    if !self.photoIsFinished {
+                    
+                    if (!self.photoIsFinished) {
                         Image("landscape")
                             .resizable()
                             .scaleEffect(self.scale)
@@ -93,7 +57,7 @@ struct ContentView: View {
                             .clipped()
                     }
                     // This is the template "frame"
-                    if self.photoIsFinished {
+                    if (self.photoIsFinished) {
                         Image(uiImage: self.croppedImage!)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -110,7 +74,6 @@ struct ContentView: View {
             .simultaneously(with: DragGesture()
                 .onChanged({ value in
                     self.currentPosition = CGSize(width: value.translation.width + self.newPosition.width, height: value.translation.height + self.newPosition.height)
-               // print(self.newPosition)
                 })
                 .onEnded ({ value in
                     self.currentPosition = CGSize(width: value.translation.width + self.newPosition.width, height: value.translation.height + self.newPosition.height)
@@ -126,7 +89,7 @@ struct ContentView: View {
         let imsize = imageToManipulate!.size
 
         var scale : CGFloat = self.frameSize.width / imsize.width
-        if imsize.height * scale < self.frameSize.height {
+        if (imsize.height * scale < self.frameSize.height) {
             scale = self.frameSize.height / imsize.height
         }
         let currentPositionWidth = self.currentPosition.width / scale
